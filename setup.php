@@ -32,6 +32,11 @@
 
  define('PLUGIN_TODO_VERSION', '1.0');
 
+ /**
+  * Get information about plugin
+  *
+  * @return array
+  */
 function plugin_version_todo() {
     return array(
         'name'           => "Todo",
@@ -50,6 +55,11 @@ function plugin_version_todo() {
     );
 }
 
+/**
+ * Check prerequisites before install
+ *
+ * @return boolean
+ */
 function plugin_todo_check_prerequisites(): bool {
     if (version_compare(ITSM_VERSION, '1.0', 'lt')) {
         echo "This plugin requires ITSM-NG 1.0";
@@ -58,14 +68,26 @@ function plugin_todo_check_prerequisites(): bool {
     return true;
 };
 
+/**
+ * Check configuration before install
+ *
+ * @param boolean $verbose
+ * @return boolean
+ */
 function plugin_todo_check_config($verbose = false): bool {
     return true;
 };
 
+/**
+ * Initialize the plugin
+ *
+ * @global array $PLUGIN_HOOKS
+ * @return void
+ */
 function plugin_init_todo(): void {
     global $PLUGIN_HOOKS;
 
     $PLUGIN_HOOKS['csrf_compliant']['todo'] = true;
-   //$PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = ['tools' => ''];
+    $PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = ['tools' => 'PluginTodoMenu'];
 }
 ?>

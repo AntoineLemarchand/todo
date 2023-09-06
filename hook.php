@@ -27,6 +27,12 @@
  * ---------------------------------------------------------------------
  **/
 
+ /**
+  * Install plugin and create table
+  *
+  * @global object $DB
+  * @return boolean
+  */
 function plugin_todo_install(): bool {
     global $DB;
 
@@ -47,6 +53,12 @@ function plugin_todo_install(): bool {
     return true;
 }
 
+/**
+ * Uninstall plugin and drop table
+ *
+ * @global object $DB
+ * @return boolean
+ */
 function plugin_todo_uninstall(): bool {
     global $DB;
 
