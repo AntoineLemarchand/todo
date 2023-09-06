@@ -47,7 +47,7 @@ function plugin_todo_install(): bool {
     return true;
 }
 
-function plugin_monplugin_uninstall(): bool {
+function plugin_todo_uninstall(): bool {
     global $DB;
 
     $tables = array('itsm_todo');

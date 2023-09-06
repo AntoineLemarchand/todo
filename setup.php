@@ -67,12 +67,5 @@ function plugin_init_todo() {
 
     $PLUGIN_HOOKS['csrf_compliant']['todo'] = true;
     $PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = array('PluginTodoProfile','changeProfile');
-    
-    Plugin::registerClass('PluginTodoProfile', array('addtabon' => array('Profile')));
-    Plugin::registerClass(PluginTodoTodo::class);
-    
-    if (Session::haveRight("plugin_todo_todo", UPDATE)) {
-        $PLUGIN_HOOKS['menu_toadd']['todo'] = ['tools' => array(PluginTodoConfig::class)];
-    }
 }
 ?>
