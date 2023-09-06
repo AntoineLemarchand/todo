@@ -66,6 +66,6 @@ function plugin_init_todo() {
     global $PLUGIN_HOOKS;
 
     $PLUGIN_HOOKS['csrf_compliant']['todo'] = true;
-    $PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = array('PluginTodoProfile','changeProfile');
+   // $PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = ['tools' => ''];
 }
 ?>
