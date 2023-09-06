@@ -34,11 +34,11 @@
 
 function plugin_version_todo() {
     return array(
-        'name'           => __("Todo", "todo"),
+        'name'           => "Todo",
         'version'        => '1.0',
-        'author'         => 'ITSM Dev Team, Djily SARR',
+        'author'         => 'ITSM Dev Team, AntoineLemarchand',
         'license'        => 'GPLv2+',
-        'homepage'       => 'https://www.itsm-ng.org',
+        'homepage'       => 'https://github.com/AntoineLemarchand/todo',
         'requirements'   => array(
             'glpi' => array(
                 'min' => '9.5',
