@@ -50,7 +50,7 @@ function plugin_version_todo() {
     );
 }
 
-function plugin_todo_check_prerequisites() {
+function plugin_todo_check_prerequisites(): bool {
     if (version_compare(ITSM_VERSION, '1.0', 'lt')) {
         echo "This plugin requires ITSM-NG 1.0";
         return false;
@@ -58,14 +58,14 @@ function plugin_todo_check_prerequisites() {
     return true;
 };
 
-function plugin_todo_check_config($verbose = false) {
+function plugin_todo_check_config($verbose = false): bool {
     return true;
 };
 
-function plugin_init_todo() {
+function plugin_init_todo(): void {
     global $PLUGIN_HOOKS;
 
     $PLUGIN_HOOKS['csrf_compliant']['todo'] = true;
-   // $PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = ['tools' => ''];
+   //$PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = ['tools' => ''];
 }
 ?>
