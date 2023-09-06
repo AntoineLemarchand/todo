@@ -30,25 +30,32 @@
  * ---------------------------------------------------------------------
  */
 
-class PluginTodoMenu extends CommonGLPI {
-    /**
-     *  Get the menu name
-     * @return string
-     */
-    static function getMenuName(): string {
-        return 'Todo';
-    }
+class PluginTodoConfig extends CommonDBTM {
 
+static $rightname = 'config';
 
-    /**
-     *  Get the menu content
-     * @return array
-     */
-    static function getMenuContent(): array {
-        return array(
-            'title' => __('Todo', 'todo'),
-            'page' => '/plugins/todo/front/todo.form.php'
-        );
-    }
+/**
+ * getTypeName
+ *
+ * @param  int $nb
+ * @return string
+ */
+static function getTypeName($nb = 0) {
+    return __("Todo List", 'todolist');
 }
-?>
+
+/**
+ * getMenuContent
+ *
+ * @return array
+ */
+static function getMenuContent() {
+    $menu = array();
+
+    $menu['title'] = self::getTypeName(2);
+    $menu['page'] = "/plugins/todo/front/todo.form.php";
+    $menu['icon']  = "fas fa-sticky-note";
+
+    return $menu;
+}
+}

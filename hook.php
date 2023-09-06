@@ -41,11 +41,9 @@ function plugin_todo_install(): bool {
     if (!$DB->tableExists("itsm_todo")) {
         $query = "CREATE TABLE `itsm_todo` (
             `id` int(11) NOT NULL AUTO_INCREMENT,
-            `title` varchar(255) NOT NULL,
-            `description` text NOT NULL,
+            `content` varchar(255) NOT NULL,
             `date` datetime NOT NULL,
-            `status` int(11) NOT NULL,
-            `user_id` int(11) NOT NULL,
+            `priority` int(11) NOT NULL,
             PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
         $DB->query($query) or die("Error creating table itsm_todo: " . $DB->error());

@@ -28,8 +28,15 @@
  */
 
  class PluginTodoProfiles extends CommonDBTM {
-    static function title() {
-        echo "<h2> Todolist </h2>";
- }
+    static function todoTable() {
+        echo "<table class='tab_cadre_fixe'>";
+        echo "<tr class='tab_bg_1'>";
+        echo "<th> name </th>";
+        echo "<th> status </th>";
+        echo "<th> priority </th>";
+        echo "<th> date </th>";
+        echo "</tr>";
+        echo "</table>";
+    }
 }
 ?>

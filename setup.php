@@ -88,6 +88,6 @@ function plugin_init_todo(): void {
     global $PLUGIN_HOOKS;
 
     $PLUGIN_HOOKS['csrf_compliant']['todo'] = true;
-    $PLUGIN_HOOKS['menu_toadd']['todo']['tools'] = 'PluginTodoMenu';
-}
+    $PLUGIN_HOOKS['menu_toadd']['todo'] = ['tools' => array(PluginTodoConfig::class)];
+};
 ?>
